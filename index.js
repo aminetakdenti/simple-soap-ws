@@ -9,17 +9,17 @@ app.get("/", (_, res) => res.send("hi\n"));
 const xml = fs.readFileSync("./service.wsdl", "utf-8");
 
 const soapObject = {
-  addService: {
+  AddService: {
     AddServicePort: {
       add: function (args, cb, header, req) {
-        console.log(args);
+        return { result: args.a + args.b };
       },
     },
   },
 };
 
 app.listen(3000, () => {
-  soap.listen(app, "/add", {}, xml, (err, res) => {
+  soap.listen(app, "/add", soapObject, xml, (err, res) => {
     if (err) console.error(err);
 
     console.log("done");
