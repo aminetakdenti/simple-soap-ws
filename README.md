@@ -7,5 +7,5 @@ simple soap web service using nodejs and that service take's an two variables "a
 - [x] make a xml schema file
 - [x] make wsdl file depending on xml schema
 - [x] create a soap server
-- [ ] create a soap client
-- [ ] start sending requests and testing
+- [x] create a soap client
+- [x] start sending requests and testing
